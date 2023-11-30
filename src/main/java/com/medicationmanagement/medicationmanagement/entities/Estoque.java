@@ -1,13 +1,18 @@
-package com.medicationmanagement.entities;
+package com.medicationmanagement.medicationmanagement.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "ESTOQUES")
+@IdClass(IdEstoque.class)
 public class Estoque {
 
     @Id
@@ -68,3 +73,4 @@ public class Estoque {
         this.farmacia = farmacia;
     }
 }
+
