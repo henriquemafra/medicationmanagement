@@ -7,4 +7,6 @@ import com.medicationmanagement.medicationmanagement.entities.Farmacia;
 
 @Repository
 public interface FarmaciaRepository extends JpaRepository<Farmacia, Long> {
+
+    Farmacia findByCnpj(Long cnpj);
 }

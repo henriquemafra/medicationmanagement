@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Medicamento {
 
     @Id
-    private Integer nroRegistro; 
+    private Integer nroRegistro;
 
     @Column(nullable = false)
     private String nome;
@@ -30,12 +30,28 @@ public class Medicamento {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private TipoMedicamento tipo; 
+    private TipoMedicamento tipo;
 
     // Enumeração para o tipo do medicamento (COMUM ou CONTROLADO)
     public enum TipoMedicamento {
         COMUM,
         CONTROLADO
+    }
+
+    public Medicamento() {
+      
+    }
+
+    // Construtor para inicialização
+    public Medicamento(Integer nroRegistro, String nome, String laboratorio, String dosagem,
+            String descricao, Float preco, TipoMedicamento tipo) {
+        this.nroRegistro = nroRegistro;
+        this.nome = nome;
+        this.laboratorio = laboratorio;
+        this.dosagem = dosagem;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.tipo = tipo;
     }
 
     // Getters e Setters

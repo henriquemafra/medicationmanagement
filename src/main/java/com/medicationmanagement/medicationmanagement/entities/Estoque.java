@@ -31,8 +31,19 @@ public class Estoque {
     @JoinColumn(name = "cnpj", referencedColumnName = "CNPJ", insertable = false, updatable = false)
     private Farmacia farmacia; // @ManyToOne indicando elacionamento com a entidade Farmacia
 
+    public Estoque() {
+    }
+
+    // Construtor para inicialização
+    public Estoque(Long cnpj, Integer nroRegistro, Integer quantidade, LocalDateTime dataAtualizacao) {
+        this.cnpj = cnpj;
+        this.nroRegistro = nroRegistro;
+        this.quantidade = quantidade;
+        this.dataAtualizacao = dataAtualizacao;
+    }
+
     // Getters e Setters
-    
+
     public Long getCnpj() {
         return cnpj;
     }
@@ -72,5 +83,12 @@ public class Estoque {
     public void setFarmacia(Farmacia farmacia) {
         this.farmacia = farmacia;
     }
-}
 
+    public Long getCnpjOrigem() {
+        return null;
+    }
+
+    public Long getCnpjDestino() {
+        return null;
+    }
+}

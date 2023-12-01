@@ -10,18 +10,24 @@ import jakarta.persistence.Table;
 public class Farmacia {
 
     @Id
-    private Long CNPJ;
+    private Long cnpj;
 
     @Column(nullable = false)
     private String razaoSocial;
 
     @Column(nullable = false)
     private String nomeFantasia;
-    
+
+    @Column(nullable = false)
+    private String email;
+
     private String telefone;
 
     @Column(nullable = false)
-    private Long CEP;
+    private String celular;
+
+    @Column(nullable = false)
+    private Long cep;
 
     @Column(nullable = false)
     private String logradouro;
@@ -46,14 +52,35 @@ public class Farmacia {
     @Column(nullable = false)
     private Double longitude;
 
-    // Getters e Setters 
-
-    public Long getCNPJ() {
-        return CNPJ;
+    public Farmacia() {
+      
     }
 
-    public void setCNPJ(Long cNPJ) {
-        CNPJ = cNPJ;
+    // Construtor para inicialização
+    public Farmacia(Long cnpj, String razaoSocial, String nomeFantasia, String email, String telefone, String celular,
+            Long cep, String logradouro, Integer numero, String bairro, String cidade, String estado, double latitude, double longitude) {
+        this.cnpj = cnpj;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.email = email;
+        this.telefone = telefone;
+        this.celular = celular;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public Long getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(Long cnpj) {
+        this.cnpj = cnpj;
     }
 
     public String getRazaoSocial() {
@@ -72,6 +99,14 @@ public class Farmacia {
         this.nomeFantasia = nomeFantasia;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getTelefone() {
         return telefone;
     }
@@ -80,12 +115,20 @@ public class Farmacia {
         this.telefone = telefone;
     }
 
-    public Long getCEP() {
-        return CEP;
+    public String getCelular() {
+        return celular;
     }
 
-    public void setCEP(Long cEP) {
-        CEP = cEP;
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public Long getCep() {
+        return cep;
+    }
+
+    public void setCep(Long cep) {
+        this.cep = cep;
     }
 
     public String getLogradouro() {

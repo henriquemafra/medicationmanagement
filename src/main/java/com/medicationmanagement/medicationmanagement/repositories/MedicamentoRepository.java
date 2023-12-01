@@ -7,4 +7,6 @@ import com.medicationmanagement.medicationmanagement.entities.Medicamento;
 
 @Repository
 public interface MedicamentoRepository extends JpaRepository<Medicamento, Integer> {
+
+    Medicamento findByNroRegistro(Integer nroRegistro);
 }
