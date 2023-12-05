@@ -10,6 +10,8 @@ import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 @Table(name = "ESTOQUES")
 @IdClass(IdEstoque.class)
@@ -24,15 +26,13 @@ public class Estoque {
     @Column(nullable = false)
     private Integer quantidade;
 
-    @Column(nullable = false)
+    @Column(name = "data_atualizacao", nullable = false)
+    @UpdateTimestamp
     private LocalDateTime dataAtualizacao;
 
     @ManyToOne
     @JoinColumn(name = "cnpj", referencedColumnName = "CNPJ", insertable = false, updatable = false)
-    private Farmacia farmacia; // @ManyToOne indicando elacionamento com a entidade Farmacia
-
-    public Estoque() {
-    }
+    private Farmacia farmacia; // @ManyToOne indicando relacionamento com a entidade Farmacia
 
     // Construtor para inicialização
     public Estoque(Long cnpj, Integer nroRegistro, Integer quantidade, LocalDateTime dataAtualizacao) {
@@ -42,7 +42,8 @@ public class Estoque {
         this.dataAtualizacao = dataAtualizacao;
     }
 
-    // Getters e Setters
+    public Estoque() {
+    }
 
     public Long getCnpj() {
         return cnpj;
@@ -84,11 +85,9 @@ public class Estoque {
         this.farmacia = farmacia;
     }
 
-    public Long getCnpjOrigem() {
+
+    public Estoque get(int i) {
         return null;
     }
 
-    public Long getCnpjDestino() {
-        return null;
-    }
 }
