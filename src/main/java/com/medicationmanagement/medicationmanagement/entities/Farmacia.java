@@ -1,3 +1,7 @@
+/**
+ * Classe que representa uma entidade Farmacia.
+ * Contém os atributos e métodos relacionados a uma farmácia.
+ */
 package com.medicationmanagement.medicationmanagement.entities;
 
 import jakarta.persistence.Column;
@@ -8,55 +12,38 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "FARMACIAS")
 public class Farmacia {
-
     @Id
     private Long cnpj;
-
     @Column(nullable = false)
     private String razaoSocial;
-
     @Column(nullable = false)
     private String nomeFantasia;
-
     @Column(nullable = false)
     private String email;
-
     private String telefone;
-
     @Column(nullable = false)
     private String celular;
-
     @Column(nullable = false)
     private Long cep;
-
     @Column(nullable = false)
     private String logradouro;
-
     @Column(nullable = false)
     private Integer numero;
-
     @Column(nullable = false)
     private String bairro;
-
     @Column(nullable = false)
     private String cidade;
-
     @Column(nullable = false)
     private String estado;
-
     private String complemento;
-
     @Column(nullable = false)
     private Double latitude;
-
     @Column(nullable = false)
     private Double longitude;
 
     public Farmacia() {
-      
     }
 
-    // Construtor para inicialização
     public Farmacia(Long cnpj, String razaoSocial, String nomeFantasia, String email, String telefone, String celular,
             Long cep, String logradouro, Integer numero, String bairro, String cidade, String estado, double latitude, double longitude) {
         this.cnpj = cnpj;
@@ -195,4 +182,5 @@ public class Farmacia {
         this.longitude = longitude;
     }
 
+    // Getters e Setters omitidos para brevidade
 }

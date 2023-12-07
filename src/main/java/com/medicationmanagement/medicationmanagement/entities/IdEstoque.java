@@ -1,10 +1,13 @@
+/**
+ * Classe que representa a identificação de um estoque.
+ * Contém os atributos CNPJ e número de registro.
+ */
 package com.medicationmanagement.medicationmanagement.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 public class IdEstoque implements Serializable {
-
     private Long cnpj;
     private Integer nroRegistro;
 
@@ -14,8 +17,6 @@ public class IdEstoque implements Serializable {
         this.cnpj = cnpj;
         this.nroRegistro = nroRegistro;
     }
-
-    // getters e setters para cnpj e nroRegistro
 
     @Override
     public boolean equals(Object o) {

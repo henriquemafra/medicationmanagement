@@ -1,13 +1,13 @@
+/**
+ * Classe que representa uma solicitação de troca de medicamentos.
+ */
 package com.medicationmanagement.medicationmanagement.controllers;
-
 
 public class TrocaMedicamentosRequest {
     private Long cnpjOrigem;
     private Long cnpjDestino;
     private Integer nroRegistro;
     private Integer quantidade;
-
-    // Getters e Setters
 
     public Long getCnpjOrigem() {
         return cnpjOrigem;

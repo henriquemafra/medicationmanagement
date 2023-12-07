@@ -1,6 +1,8 @@
+/**
+ * Classe que representa uma resposta de troca de medicamentos.
+ */
 package com.medicationmanagement.medicationmanagement.controllers;
 
-// Classe TrocaMedicamentosResponse
 public class TrocaMedicamentosResponse {
     private Integer nroRegistro;
     private Long cnpjOrigem;
@@ -8,7 +10,6 @@ public class TrocaMedicamentosResponse {
     private Long cnpjDestino;
     private Integer quantidadeDestino;
 
-    // Construtor
     public TrocaMedicamentosResponse(Integer nroRegistro, Long cnpjOrigem, Integer quantidadeOrigem,
             Long cnpjDestino, Integer quantidadeDestino) {
         this.nroRegistro = nroRegistro;
@@ -17,8 +18,6 @@ public class TrocaMedicamentosResponse {
         this.cnpjDestino = cnpjDestino;
         this.quantidadeDestino = quantidadeDestino;
     }
-
-    // Getters e Setters
 
     public Integer getNroRegistro() {
         return nroRegistro;

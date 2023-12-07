@@ -1,3 +1,6 @@
+/**
+ * Classe que representa um medicamento.
+ */
 package com.medicationmanagement.medicationmanagement.entities;
 
 import jakarta.persistence.Column;
@@ -10,39 +13,32 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "MEDICAMENTOS")
 public class Medicamento {
-
     @Id
     private Integer nroRegistro;
-
     @Column(nullable = false)
     private String nome;
-
     @Column(nullable = false)
     private String laboratorio;
-
     @Column(nullable = false)
     private String dosagem;
-
     private String descricao;
-
     @Column(nullable = false)
     private Float preco;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoMedicamento tipo;
 
-    // Enumeração para o tipo do medicamento (COMUM ou CONTROLADO)
+    /**
+     * Enumeração que define os tipos de medicamento.
+     */
     public enum TipoMedicamento {
         COMUM,
         CONTROLADO
     }
 
     public Medicamento() {
-      
     }
 
-    // Construtor para inicialização
     public Medicamento(Integer nroRegistro, String nome, String laboratorio, String dosagem,
             String descricao, Float preco, TipoMedicamento tipo) {
         this.nroRegistro = nroRegistro;
@@ -54,7 +50,6 @@ public class Medicamento {
         this.tipo = tipo;
     }
 
-    // Getters e Setters
     public Integer getNroRegistro() {
         return nroRegistro;
     }
@@ -110,4 +105,5 @@ public class Medicamento {
     public void setTipo(TipoMedicamento tipo) {
         this.tipo = tipo;
     }
+
 }

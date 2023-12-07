@@ -1,3 +1,9 @@
+/**
+ * Classe que representa a entidade Estoque.
+ * Esta classe contém informações sobre o estoque de uma farmácia, como o CNPJ da farmácia,
+ * o número de registro do estoque, a quantidade de medicamentos disponíveis, a data de atualização
+ * e a referência para a farmácia correspondente.
+ */
 package com.medicationmanagement.medicationmanagement.entities;
 
 import jakarta.persistence.Column;
@@ -7,9 +13,7 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
 import java.time.LocalDateTime;
-
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
@@ -32,9 +36,8 @@ public class Estoque {
 
     @ManyToOne
     @JoinColumn(name = "cnpj", referencedColumnName = "CNPJ", insertable = false, updatable = false)
-    private Farmacia farmacia; // @ManyToOne indicando relacionamento com a entidade Farmacia
+    private Farmacia farmacia;
 
-    // Construtor para inicialização
     public Estoque(Long cnpj, Integer nroRegistro, Integer quantidade, LocalDateTime dataAtualizacao) {
         this.cnpj = cnpj;
         this.nroRegistro = nroRegistro;
@@ -85,9 +88,7 @@ public class Estoque {
         this.farmacia = farmacia;
     }
 
-
     public Estoque get(int i) {
         return null;
     }
-
 }
