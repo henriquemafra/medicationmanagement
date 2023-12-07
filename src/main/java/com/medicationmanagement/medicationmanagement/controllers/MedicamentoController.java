@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.medicationmanagement.medicationmanagement.entities.Medicamento;
 import com.medicationmanagement.medicationmanagement.repositories.MedicamentoRepository;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/medicamentos")
@@ -41,7 +42,7 @@ public class MedicamentoController {
      */
     @PostMapping
     public ResponseEntity<?> incluirMedicamento(@RequestBody Medicamento novoMedicamento) {
-        Medicamento medicamentoExistente = medicamentoRepository.findByNroRegistro(novoMedicamento.getNroRegistro());
+        Optional<Medicamento> medicamentoExistente = medicamentoRepository.findByNroRegistro(novoMedicamento.getNroRegistro());
         if (medicamentoExistente != null) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("Já existe um medicamento cadastrado com o Número de Registro informado.");
