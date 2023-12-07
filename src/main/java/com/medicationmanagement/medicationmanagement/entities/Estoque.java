@@ -88,7 +88,4 @@ public class Estoque {
         this.farmacia = farmacia;
     }
 
-    public Estoque get(int i) {
-        return null;
-    }
 }
